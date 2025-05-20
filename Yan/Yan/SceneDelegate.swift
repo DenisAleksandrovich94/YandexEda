@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  YandexEda
+//  Yan
 //
-//  Created by Ivakhnenko Denis on 19.05.2025.
+//  Created by Ivakhnenko Denis on 20.05.2025.
 //
 
 import UIKit

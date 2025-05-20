@@ -7,19 +7,32 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		5CCFBF4B2DDB646A001F9E1E /* YandexEda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexEda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CCFBFC02DDC6FBE001F9E1E /* Yan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5CCFBFD22DDC6FBF001F9E1E /* Exceptions for "Yan" folder in "Yan" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5CCFBFBF2DDC6FBE001F9E1E /* Yan */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		5CCFBF4D2DDB646A001F9E1E /* YandexEda */ = {
+		5CCFBFC22DDC6FBE001F9E1E /* Yan */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = YandexEda;
+			exceptions = (
+				5CCFBFD22DDC6FBF001F9E1E /* Exceptions for "Yan" folder in "Yan" target */,
+			);
+			path = Yan;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5CCFBF482DDB646A001F9E1E /* Frameworks */ = {
+		5CCFBFBD2DDC6FBE001F9E1E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5CCFBF422DDB646A001F9E1E = {
+		5CCFBFB72DDC6FBE001F9E1E = {
 			isa = PBXGroup;
 			children = (
-				5CCFBF4D2DDB646A001F9E1E /* YandexEda */,
-				5CCFBF4C2DDB646A001F9E1E /* Products */,
+				5CCFBFC22DDC6FBE001F9E1E /* Yan */,
+				5CCFBFC12DDC6FBE001F9E1E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5CCFBF4C2DDB646A001F9E1E /* Products */ = {
+		5CCFBFC12DDC6FBE001F9E1E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CCFBF4B2DDB646A001F9E1E /* YandexEda.app */,
+				5CCFBFC02DDC6FBE001F9E1E /* Yan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5CCFBF4A2DDB646A001F9E1E /* YandexEda */ = {
+		5CCFBFBF2DDC6FBE001F9E1E /* Yan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CCFBF5E2DDB646B001F9E1E /* Build configuration list for PBXNativeTarget "YandexEda" */;
+			buildConfigurationList = 5CCFBFD32DDC6FBF001F9E1E /* Build configuration list for PBXNativeTarget "Yan" */;
 			buildPhases = (
-				5CCFBF472DDB646A001F9E1E /* Sources */,
-				5CCFBF482DDB646A001F9E1E /* Frameworks */,
-				5CCFBF492DDB646A001F9E1E /* Resources */,
+				5CCFBFBC2DDC6FBE001F9E1E /* Sources */,
+				5CCFBFBD2DDC6FBE001F9E1E /* Frameworks */,
+				5CCFBFBE2DDC6FBE001F9E1E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				5CCFBF4D2DDB646A001F9E1E /* YandexEda */,
+				5CCFBFC22DDC6FBE001F9E1E /* Yan */,
 			);
-			name = YandexEda;
+			name = Yan;
 			packageProductDependencies = (
 			);
-			productName = YandexEda;
-			productReference = 5CCFBF4B2DDB646A001F9E1E /* YandexEda.app */;
+			productName = Yan;
+			productReference = 5CCFBFC02DDC6FBE001F9E1E /* Yan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5CCFBF432DDB646A001F9E1E /* Project object */ = {
+		5CCFBFB82DDC6FBE001F9E1E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					5CCFBF4A2DDB646A001F9E1E = {
+					5CCFBFBF2DDC6FBE001F9E1E = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 5CCFBF462DDB646A001F9E1E /* Build configuration list for PBXProject "YandexEda" */;
+			buildConfigurationList = 5CCFBFBB2DDC6FBE001F9E1E /* Build configuration list for PBXProject "Yan" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 5CCFBF422DDB646A001F9E1E;
+			mainGroup = 5CCFBFB72DDC6FBE001F9E1E;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 5CCFBF4C2DDB646A001F9E1E /* Products */;
+			productRefGroup = 5CCFBFC12DDC6FBE001F9E1E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5CCFBF4A2DDB646A001F9E1E /* YandexEda */,
+				5CCFBFBF2DDC6FBE001F9E1E /* Yan */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5CCFBF492DDB646A001F9E1E /* Resources */ = {
+		5CCFBFBE2DDC6FBE001F9E1E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5CCFBF472DDB646A001F9E1E /* Sources */ = {
+		5CCFBFBC2DDC6FBE001F9E1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		5CCFBF5F2DDB646B001F9E1E /* Debug */ = {
+		5CCFBFD42DDC6FBF001F9E1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -134,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 546L24J945;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YandexEda/Info.plist;
+				INFOPLIST_FILE = Yan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -145,7 +158,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Den.029-Icloud.com.YandexEda";
+				PRODUCT_BUNDLE_IDENTIFIER = "Den.029-Icloud.com.Yan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -153,7 +166,7 @@
 			};
 			name = Debug;
 		};
-		5CCFBF602DDB646B001F9E1E /* Release */ = {
+		5CCFBFD52DDC6FBF001F9E1E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -162,7 +175,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 546L24J945;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YandexEda/Info.plist;
+				INFOPLIST_FILE = Yan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -173,7 +186,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Den.029-Icloud.com.YandexEda";
+				PRODUCT_BUNDLE_IDENTIFIER = "Den.029-Icloud.com.Yan";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -181,7 +194,7 @@
 			};
 			name = Release;
 		};
-		5CCFBF612DDB646B001F9E1E /* Debug */ = {
+		5CCFBFD62DDC6FBF001F9E1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,7 +257,7 @@
 			};
 			name = Debug;
 		};
-		5CCFBF622DDB646B001F9E1E /* Release */ = {
+		5CCFBFD72DDC6FBF001F9E1E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -303,25 +316,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5CCFBF462DDB646A001F9E1E /* Build configuration list for PBXProject "YandexEda" */ = {
+		5CCFBFBB2DDC6FBE001F9E1E /* Build configuration list for PBXProject "Yan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CCFBF612DDB646B001F9E1E /* Debug */,
-				5CCFBF622DDB646B001F9E1E /* Release */,
+				5CCFBFD62DDC6FBF001F9E1E /* Debug */,
+				5CCFBFD72DDC6FBF001F9E1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CCFBF5E2DDB646B001F9E1E /* Build configuration list for PBXNativeTarget "YandexEda" */ = {
+		5CCFBFD32DDC6FBF001F9E1E /* Build configuration list for PBXNativeTarget "Yan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CCFBF5F2DDB646B001F9E1E /* Debug */,
-				5CCFBF602DDB646B001F9E1E /* Release */,
+				5CCFBFD42DDC6FBF001F9E1E /* Debug */,
+				5CCFBFD52DDC6FBF001F9E1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5CCFBF432DDB646A001F9E1E /* Project object */;
+	rootObject = 5CCFBFB82DDC6FBE001F9E1E /* Project object */;
 }
