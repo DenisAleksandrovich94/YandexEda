@@ -1,41 +1,96 @@
-//
-//  ViewController.swift
-//  Yan
-//
-//  Created by Ivakhnenko Denis on 20.05.2025.
-//
 
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var TableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     
-
+    
+    //    var downloadedData: [DataNews.Article] = []
+    var downloadedData: [DataNews.Article]!
+    //    MARK: downloadedData: [DataNews.Article]! тут падает, можно подругому?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        TableView.dataSource = self
+        tableView.dataSource = self
         apiNews.shared.fetchNews { result in
+            
             switch result {
             case .success(let data):
-                print(data)
+                DispatchQueue.main.async{ [weak self] in
+                    guard let self = self else {return}
+                    downloadedData = data.articles
+                    tableView.reloadData()
+                    
+                }
                 
             case .failure(let error):
                 print(error)
             }
             
         }
-        // Do any additional setup after loading the view.
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(addButtonTapped))
     }
-
+    
+    @objc  func addButtonTapped () {
+        
+        let storyBord = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBord.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        downloadedData?.count ?? 0 // 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-       
+        
+        let item = downloadedData[indexPath.row]
+        
+        guard let urlString = downloadedData[indexPath.row].urlToImage, let url = URL(string: urlString)  else {
+            cell.ImageInCell.image = UIImage(named: "noImage")
+            return cell
+        }
+        
+        DispatchQueue.global().async {
+            let dataImage = try? Data(contentsOf:url)
+            
+            if let data = dataImage {
+                let image = UIImage(data: data)
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else {return}
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                    let date = dateFormatter.date(from: downloadedData[indexPath.row].publishedAt)
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    
+                    cell.ImageInCell.image = image
+                    cell.autorLabel.text = downloadedData[indexPath.row].author
+                    cell.titleLabel.text = downloadedData[indexPath.row].title
+                    cell.dateLabel.text = dateFormatter.string(from: date!)
+                    
+                    
+                    
+                    
+                    
+                }
+                
+            } else {
+                print("DataContentOfError")
+            }
+            
+        }
+        
+        
+        
+        // guard let url = URL(string: imageString) else {return}
+        
+        
         return cell
     }
     

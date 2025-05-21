@@ -18,8 +18,12 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     
-    
     @IBOutlet var buttonLable: UIButton!
+    
+    
+    override func prepareForReuse() {
+        
+    }
     
     
 }
