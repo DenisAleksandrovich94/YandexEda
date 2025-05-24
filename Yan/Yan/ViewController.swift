@@ -6,30 +6,39 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var tableView: UITableView!
     
     
-    //    var downloadedData: [DataNews.Article] = []
     var downloadedData: [DataNews.Article]!
-    //    MARK: downloadedData: [DataNews.Article]! тут падает, можно подругому?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        apiNews.shared.fetchNews { result in
-            
-            switch result {
-            case .success(let data):
-                DispatchQueue.main.async{ [weak self] in
-                    guard let self = self else {return}
-                    downloadedData = data.articles
-                    tableView.reloadData()
-                    
-                }
+        updataTableView()
+        setСolor()
                 
-            case .failure(let error):
-                print(error)
-            }
-            
-        }
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(addButtonTapped))
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(noName),
+            name: Notification.Name("updataTableView"),
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            forName: Notification.Name("SwitchTheme"),
+            object: nil,
+            queue: .main) { Notification in
+                self.setСolor()
+            }
+        
+    }
+    
+    func setСolor() {
+        if UserDefaults.standard.bool(forKey: Constants.switchKey) {
+            self.view.backgroundColor = .black
+        } else {
+            self.view.backgroundColor = .white
+
+        }
     }
     
     @objc  func addButtonTapped () {
@@ -40,16 +49,42 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
+    
+    func updataTableView(){
+        apiNews.shared.fetchNews { result in
+            
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async{ [weak self] in
+                    guard let self = self else {return}
+                    downloadedData = data.articles
+                    tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    @objc func noName() {
+        updataTableView()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
+        let title = UserDefaults.standard.string(forKey: "reguest")
+        
+        return title
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         downloadedData?.count ?? 0 // 10
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         
-        let item = downloadedData[indexPath.row]
-        
+                
         guard let urlString = downloadedData[indexPath.row].urlToImage, let url = URL(string: urlString)  else {
             cell.ImageInCell.image = UIImage(named: "noImage")
             return cell
@@ -73,15 +108,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     cell.autorLabel.text = downloadedData[indexPath.row].author
                     cell.titleLabel.text = downloadedData[indexPath.row].title
                     cell.dateLabel.text = dateFormatter.string(from: date!)
-                    
-                    
-                    
-                    
-                    
+   
                 }
                 
             } else {
-                print("DataContentOfError")
+                DispatchQueue.main.async {
+                    cell.ImageInCell.image = UIImage(named: "noImage")
+                }
             }
             
         }

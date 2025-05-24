@@ -15,8 +15,8 @@ class apiNews {
     private init(){}
     
     func fetchNews (complition: @escaping (Result<DataNews,Error>) -> ()) {
-        
-        let url = fetchUrl(url: "/everything?q=bitcoin")
+        let q = UserDefaults.standard.string(forKey: "reguest") ?? "bitcoin"
+        let url = fetchUrl(url: "/everything?q=\(q)")
         print(url)
         URLSession.shared.dataTask(with: url){ data,responce,error in
             guard let data = data else {
