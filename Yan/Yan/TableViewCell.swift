@@ -22,7 +22,7 @@ class TableViewCell: UITableViewCell {
     
     
     override func prepareForReuse() {
-        
+        print("")
     }
     
     
